@@ -16,7 +16,7 @@ class ProductListView(ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        queryset = Product.available.all()
+        queryset = Product.objects.all()
 
         category_slug = self.kwargs.get("slug")
         if category_slug:

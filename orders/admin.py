@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from payments.models import Payment
+#from payments.models import Payment
 
 from .models import Item, Order
 
@@ -10,7 +10,7 @@ class ItemInline(admin.TabularInline):
     raw_id_fields = ["product"]
     extra = 0
 
-
+"""
 class PaymentInline(admin.TabularInline):
     model = Payment
     can_delete = False
@@ -30,10 +30,10 @@ class PaymentInline(admin.TabularInline):
     def has_add_permission(self, request, obj):
         return False
 
-
+"""
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ["__str__", "name", "email", "cpf", "paid", "created", "modified"]
     list_filter = ["paid", "created", "modified"]
     search_fields = ["name", "email", "cpf"]
-    inlines = [ItemInline, PaymentInline]
+    inlines = [ItemInline]

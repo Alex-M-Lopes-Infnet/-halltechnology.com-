@@ -25,7 +25,7 @@ class OrderCreateView(CreateView):
                 )
             cart.clear()
             self.request.session["order_id"] = order.id
-            return redirect(reverse("payments:process"))
+            #return redirect(reverse("payments:process"))
         return redirect(reverse("pages:home"))
 
     def get_context_data(self, **kwargs):

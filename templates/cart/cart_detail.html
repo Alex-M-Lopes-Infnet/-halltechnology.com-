@@ -70,7 +70,6 @@
         <a class=" btn btn-primary" href="{% url 'products:list' %}">
             Continuar comprando
         </a>
-
         <a class="btn btn-success {% if not cart %}disabled{% endif %}" href="{% url 'orders:create' %}">
             Finalizar compra
         </a>
